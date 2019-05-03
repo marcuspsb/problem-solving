@@ -8,30 +8,23 @@ using namespace std;
 
 int r, m, n, bloco, pd[1000000];
 
-int main()
-{
+int main() {
+  int tc;
+  scanf("%d", &tc);
 
-    int tc;
-    scanf("%d", &tc);
-
-    while (tc--)
-    {
-        scanf("%d%d", &n, &m);
-        for (int i = 1; i <= m; i++)
-            pd[i] = INF;
-        pd[0] = 0;
-        for (int j = 0; j < n; j++)
-        {
-
-            scanf("%d", &bloco);
-            pd[bloco] = 1;
-            for (int i = bloco + 1; i <= m; i++)
-            {
-                pd[i] = min(pd[i], pd[i - bloco] + 1);
-            }
-        }
-        cout << pd[m] << endl;
+  while (tc--) {
+    scanf("%d%d", &n, &m);
+    for (int i = 1; i <= m; i++) pd[i] = INF;
+    pd[0] = 0;
+    for (int j = 0; j < n; j++) {
+      scanf("%d", &bloco);
+      pd[bloco] = 1;
+      for (int i = bloco + 1; i <= m; i++) {
+        pd[i] = min(pd[i], pd[i - bloco] + 1);
+      }
     }
+    cout << pd[m] << endl;
+  }
 
-    return (0);
+  return (0);
 }

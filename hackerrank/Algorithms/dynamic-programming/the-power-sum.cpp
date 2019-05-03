@@ -19,8 +19,7 @@ long long solve(int base, int sum) {
     return 0;
   }
 
-  if (pd[base][sum] != -1)
-    return pd[base][sum];
+  if (pd[base][sum] != -1) return pd[base][sum];
 
   long long ret = 0;
   ret += solve(base + 1, pow(base, N) + sum);
@@ -30,7 +29,6 @@ long long solve(int base, int sum) {
 }
 
 int main() {
-
   cin >> X >> N;
   maxBase = pow(X, (1.0 / N)) + 1;
   memset(pd, -1, sizeof(pd));

@@ -20,7 +20,7 @@ vector<int> dijkstra(vector<vector<int>> &graph, int start) {
         smallDist = dist[j];
       }
     }
-  
+
     visted[u] = true;
 
     for (int v = 1; v < graph.size(); ++v) {

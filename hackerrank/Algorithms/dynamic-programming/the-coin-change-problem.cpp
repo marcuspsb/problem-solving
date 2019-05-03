@@ -13,12 +13,9 @@ int coins[MAXM], N, M;
 ll pd[MAXN][MAXM];
 
 ll solve(int sum, int pos) {
-  if (sum < 0 || pos == M)
-    return 0;
-  if (sum == 0)
-    return 1;
-  if (-1 != pd[sum][pos])
-    return pd[sum][pos];
+  if (sum < 0 || pos == M) return 0;
+  if (sum == 0) return 1;
+  if (-1 != pd[sum][pos]) return pd[sum][pos];
   ll ret = 0;
   ret += solve(sum - coins[pos], pos);
   ret += solve(sum, pos + 1);
